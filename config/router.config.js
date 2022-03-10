@@ -124,6 +124,21 @@ export default [
         ],
       },
       {
+        path: '/haiyue',
+        routes: [
+          {
+            path: '/haiyue/member',
+            routes: [
+              { path: '/haiyue/member', redirect: '/haiyue/member/list' },
+              { path: '/haiyue/member/list', component: './Haiyue/Member/Member' },
+              { path: '/haiyue/member/add', component: './Haiyue/Member/MemberAdd' },
+              { path: '/haiyue/member/edit/:id', component: './Haiyue/Member/MemberEdit' },
+              { path: '/haiyue/member/view/:id', component: './Haiyue/Member/MemberView' },
+            ],
+          },
+        ]
+      },
+      {
         path: '/work',
         routes: [
           {
