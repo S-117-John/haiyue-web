@@ -136,6 +136,16 @@ export default [
               { path: '/haiyue/member/view/:id', component: './Haiyue/Member/MemberView' },
             ],
           },
+          {
+            path: '/haiyue/clazz',
+            routes: [
+              { path: '/haiyue/clazz', redirect: '/haiyue/clazz/list' },
+              { path: '/haiyue/clazz/list', component: './Haiyue/Clazz/Clazz' },
+              { path: '/haiyue/clazz/add', component: './Haiyue/Clazz/ClazzAdd' },
+              { path: '/haiyue/clazz/edit/:id', component: './Haiyue/Clazz/ClazzEdit' },
+              { path: '/haiyue/clazz/view/:id', component: './Haiyue/Clazz/ClazzView' },
+            ],
+          },
         ]
       },
       {
