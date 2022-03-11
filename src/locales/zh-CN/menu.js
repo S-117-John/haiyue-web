@@ -82,5 +82,6 @@ export default {
   'menu.editor.mind': '脑图编辑器',
   'menu.editor.koni': '拓扑编辑器',
   'menu.desk.member': '会员管理',
-  'menu.desk.clazz': '班级管理'
+  'menu.desk.clazz': '班级管理',
+  'menu.desk.schedule': '课程表'
 };

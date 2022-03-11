@@ -4,7 +4,7 @@ module.exports = {
   clientId: 'sword', // 客户端id
   clientSecret: 'sword_secret', // 客户端密钥
   tenantMode: true, // 开启租户模式
-  captchaMode: true, // 开启验证码模式
+  captchaMode: false, // 开启验证码模式
   switchMode: false, // 开启部门切换模式
   pwa: true,
   navTheme: 'dark', // theme for nav menu

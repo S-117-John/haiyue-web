@@ -146,6 +146,16 @@ export default [
               { path: '/haiyue/clazz/view/:id', component: './Haiyue/Clazz/ClazzView' },
             ],
           },
+          {
+            path: '/haiyue/schedule',
+            routes: [
+              { path: '/haiyue/schedule', redirect: '/haiyue/schedule/list' },
+              { path: '/haiyue/schedule/list', component: './Haiyue/Schedule/Schedule' },
+              { path: '/haiyue/schedule/add', component: './Haiyue/Schedule/ScheduleAdd' },
+              { path: '/haiyue/schedule/edit/:id', component: './Haiyue/Schedule/ScheduleEdit' },
+              { path: '/haiyue/schedule/view/:id', component: './Haiyue/Schedule/ScheduleView' },
+            ],
+          },
         ]
       },
       {
