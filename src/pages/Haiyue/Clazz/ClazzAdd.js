@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Form, Input, Card, Button } from 'antd';
+import {Form, Input, Card, Button, Select} from 'antd';
 import { connect } from 'dva';
 import Panel from '../../../components/Panel';
 import styles from '../../../layouts/Sword.less';
@@ -60,15 +60,15 @@ class ClazzAdd extends PureComponent {
                 ],
               })(<Input placeholder="请输入班级编号" />)}
             </FormItem>
-            <FormItem {...formItemLayout} label="班级姓名">
+            <FormItem {...formItemLayout} label="班级名称">
               {getFieldDecorator('name', {
                 rules: [
                   {
                     required: true,
-                    message: '请输入班级姓名',
+                    message: '请输入班级名称',
                   },
                 ],
-              })(<Input placeholder="请输入班级姓名" />)}
+              })(<Input placeholder="请输入班级名称" />)}
             </FormItem>
             <FormItem {...formItemLayout} label="管理员">
               {getFieldDecorator('manager', {
@@ -78,7 +78,31 @@ class ClazzAdd extends PureComponent {
                     message: '请输入管理员',
                   },
                 ],
-              })(<Input placeholder="请输入管理员" />)}
+              })(
+                <Select placeholder="请选择代课教师">
+                  <Select.Option key={1} value='Jaden'>
+                    Jaden
+                  </Select.Option>
+                  <Select.Option key={2} value='Hans'>
+                    Hans
+                  </Select.Option>
+                  <Select.Option key={3} value='Panda'>
+                    Panda
+                  </Select.Option>
+                  <Select.Option key={3} value='Eva'>
+                    Eva
+                  </Select.Option>
+                  <Select.Option key={3} value='Lily'>
+                    Lily
+                  </Select.Option>
+                  <Select.Option key={3} value='Jamie'>
+                    Jamie
+                  </Select.Option>
+                  <Select.Option key={3} value='Eilna'>
+                    Eilna
+                  </Select.Option>
+                </Select>
+              )}
             </FormItem>
             <FormItem {...formItemLayout} label="教师">
               {getFieldDecorator('teacher', {
@@ -88,7 +112,31 @@ class ClazzAdd extends PureComponent {
                     message: '请输入教师',
                   },
                 ],
-              })(<Input placeholder="请输入教师" />)}
+              })(
+                <Select placeholder="请选择代课教师">
+                  <Select.Option key={1} value='Jaden'>
+                    Jaden
+                  </Select.Option>
+                  <Select.Option key={2} value='Hans'>
+                    Hans
+                  </Select.Option>
+                  <Select.Option key={3} value='Panda'>
+                    Panda
+                  </Select.Option>
+                  <Select.Option key={3} value='Eva'>
+                    Eva
+                  </Select.Option>
+                  <Select.Option key={3} value='Lily'>
+                    Lily
+                  </Select.Option>
+                  <Select.Option key={3} value='Jamie'>
+                    Jamie
+                  </Select.Option>
+                  <Select.Option key={3} value='Eilna'>
+                    Eilna
+                  </Select.Option>
+                </Select>
+              )}
             </FormItem>
           </Card>
         </Form>

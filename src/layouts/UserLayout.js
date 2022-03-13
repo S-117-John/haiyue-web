@@ -119,7 +119,7 @@ class UserLayout extends Component {
                   </Link>
                 </div>
                 <div className={styles.desc}>
-                  Sword是BladeX前端UI项目，基于react 、ant design、umi、dva等流行技术栈。
+                  海悦体育文化有限公司
                 </div>
               </div>
               {children}

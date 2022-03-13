@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'Sword 企业级开发平台',
-  name: 'Sword Admin',
+  title: '海悦体育文化有限公司',
+  name: '',
   clientId: 'sword', // 客户端id
   clientSecret: 'sword_secret', // 客户端密钥
   tenantMode: true, // 开启租户模式
