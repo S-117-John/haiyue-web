@@ -156,6 +156,16 @@ export default [
               { path: '/haiyue/schedule/view/:id', component: './Haiyue/Schedule/ScheduleView' },
             ],
           },
+          {
+            path: '/haiyue/sign',
+            routes: [
+              { path: '/haiyue/sign', redirect: '/haiyue/sign/list' },
+              { path: '/haiyue/sign/list', component: './Haiyue/Sign/Sign' },
+              { path: '/haiyue/sign/add', component: './Haiyue/Sign/SignAdd' },
+              { path: '/haiyue/sign/edit/:id', component: './Haiyue/Sign/SignEdit' },
+              { path: '/haiyue/sign/view/:id', component: './Haiyue/Sign/SignView' },
+            ],
+          },
         ]
       },
       {

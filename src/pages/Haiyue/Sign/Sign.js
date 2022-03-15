@@ -1,25 +1,22 @@
-import React, {Fragment, PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'dva';
-import {Button, Col, Divider, Form, Input, Popconfirm, Row} from 'antd';
+import { Button, Col, Form, Input, Row } from 'antd';
 import Panel from '../../../components/Panel';
-import { MEMBER_LIST } from '../../../actions/member';
+import { SIGN_LIST } from '../../../actions/sign';
 import Grid from '../../../components/Sword/Grid';
-import router from "umi/router";
-import request from "@/utils/request";
-import func from "@/utils/Func";
 
 const FormItem = Form.Item;
 
-@connect(({ member, loading }) => ({
-  member,
-  loading: loading.models.member,
+@connect(({ sign, loading }) => ({
+  sign,
+  loading: loading.models.sign,
 }))
 @Form.create()
-class Member extends PureComponent {
+class Sign extends PureComponent {
   // ============ 查询 ===============
   handleSearch = params => {
     const { dispatch } = this.props;
-    dispatch(MEMBER_LIST(params));
+    dispatch(SIGN_LIST(params));
   };
 
   // ============ 查询表单 ===============
@@ -48,45 +45,13 @@ class Member extends PureComponent {
     );
   };
 
-  handleClick = id => {
-    // alert(JSON.stringify(rows))
-    return request('/api/haiyue/sign/sign', {
-      method: 'POST',
-      body: func.toFormData({ids:id}),
-    });
-  };
-
-  renderActionButton = (keys, rows) => (
-    <Fragment>
-      <Divider type="vertical" />
-      <Popconfirm
-        title="确认签到?"
-        onConfirm={() => {
-          this.handleClick(rows[0].id);
-        }}
-        okText="Yes"
-        cancelText="No"
-      >
-        <a href="#">签到</a>
-      </Popconfirm>
-      {/*<a*/}
-      {/*  title="签到"*/}
-      {/*  onClick={() => {*/}
-      {/*    this.handleClick(rows);*/}
-      {/*  }}*/}
-      {/*>*/}
-      {/*  列表*/}
-      {/*</a>*/}
-    </Fragment>
-  );
-
   render() {
-    const code = 'member';
+    const code = 'sign';
 
     const {
       form,
       loading,
-      member: { data },
+      sign: { data },
     } = this.props;
 
     const columns = [
@@ -111,16 +76,8 @@ class Member extends PureComponent {
         dataIndex: 'parentName',
       },
       {
-        title: '宝宝小名',
-        dataIndex: 'nickname',
-      },
-      {
-        title: '课程数',
-        dataIndex: 'classNum',
-      },
-      {
-        title: '赠课数',
-        dataIndex: 'giveNum',
+        title: '签到时间',
+        dataIndex: 'signDate',
       },
     ];
 
@@ -131,7 +88,6 @@ class Member extends PureComponent {
           form={form}
           onSearch={this.handleSearch}
           renderSearchForm={this.renderSearchForm}
-          renderActionButton={this.renderActionButton}
           loading={loading}
           data={data}
           columns={columns}
@@ -140,4 +96,4 @@ class Member extends PureComponent {
     );
   }
 }
-export default Member;
+export default Sign;

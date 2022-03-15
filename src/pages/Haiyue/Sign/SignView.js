@@ -4,15 +4,15 @@ import { Form, Card, Button } from 'antd';
 import { connect } from 'dva';
 import Panel from '../../../components/Panel';
 import styles from '../../../layouts/Sword.less';
-import { MEMBER_DETAIL } from '../../../actions/member';
+import { SIGN_DETAIL } from '../../../actions/sign';
 
 const FormItem = Form.Item;
 
-@connect(({ member }) => ({
-  member,
+@connect(({ sign }) => ({
+  sign,
 }))
 @Form.create()
-class MemberView extends PureComponent {
+class SignView extends PureComponent {
   componentWillMount() {
     const {
       dispatch,
@@ -20,7 +20,7 @@ class MemberView extends PureComponent {
         params: { id },
       },
     } = this.props;
-    dispatch(MEMBER_DETAIL(id));
+    dispatch(SIGN_DETAIL(id));
   }
 
   handleEdit = () => {
@@ -29,12 +29,12 @@ class MemberView extends PureComponent {
         params: { id },
       },
     } = this.props;
-    router.push(`/haiyue/member/edit/${id}`);
+    router.push(`/haiyue/sign/edit/${id}`);
   };
 
   render() {
     const {
-      member: { detail },
+      sign: { detail },
     } = this.props;
 
     const formItemLayout = {
@@ -56,7 +56,7 @@ class MemberView extends PureComponent {
     );
 
     return (
-      <Panel title="查看" back="/haiyue/member" action={action}>
+      <Panel title="查看" back="/haiyue/sign" action={action}>
         <Form hideRequiredMark style={{ marginTop: 8 }}>
           <Card className={styles.card} bordered={false}>
             <FormItem {...formItemLayout} label="会员编号">
@@ -74,14 +74,8 @@ class MemberView extends PureComponent {
             <FormItem {...formItemLayout} label="家长姓名">
               <span>{detail.parentName}</span>
             </FormItem>
-            <FormItem {...formItemLayout} label="宝宝小名">
-              <span>{detail.nickname}</span>
-            </FormItem>
-            <FormItem {...formItemLayout} label="课程数">
-              <span>{detail.classNum}</span>
-            </FormItem>
-            <FormItem {...formItemLayout} label="赠课数">
-              <span>{detail.giveNum}</span>
+            <FormItem {...formItemLayout} label="签到时间">
+              <span>{detail.signDate}</span>
             </FormItem>
           </Card>
         </Form>
@@ -89,4 +83,4 @@ class MemberView extends PureComponent {
     );
   }
 }
-export default MemberView;
+export default SignView;

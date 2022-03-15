@@ -90,6 +90,46 @@ class MemberAdd extends PureComponent {
                 ],
               })(<Input placeholder="请输入出生日期" />)}
             </FormItem>
+            <FormItem {...formItemLayout} label="家长姓名">
+              {getFieldDecorator('parentName', {
+                rules: [
+                  {
+                    required: true,
+                    message: '请输入家长姓名',
+                  },
+                ],
+              })(<Input placeholder="请输入家长姓名" />)}
+            </FormItem>
+            <FormItem {...formItemLayout} label="宝宝小名">
+              {getFieldDecorator('nickname', {
+                rules: [
+                  {
+                    required: true,
+                    message: '请输入宝宝小名',
+                  },
+                ],
+              })(<Input placeholder="请输入宝宝小名" />)}
+            </FormItem>
+            <FormItem {...formItemLayout} label="课程数">
+              {getFieldDecorator('classNum', {
+                rules: [
+                  {
+                    required: true,
+                    message: '请输入课程数',
+                  },
+                ],
+              })(<Input placeholder="请输入课程数" />)}
+            </FormItem>
+            <FormItem {...formItemLayout} label="赠课数">
+              {getFieldDecorator('giveNum', {
+                rules: [
+                  {
+                    required: true,
+                    message: '请输入赠课数',
+                  },
+                ],
+              })(<Input placeholder="请输入赠课数" />)}
+            </FormItem>
           </Card>
         </Form>
       </Panel>

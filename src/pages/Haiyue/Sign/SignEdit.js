@@ -3,16 +3,16 @@ import { Form, Input, Card, Button } from 'antd';
 import { connect } from 'dva';
 import Panel from '../../../components/Panel';
 import styles from '../../../layouts/Sword.less';
-import { MEMBER_DETAIL, MEMBER_SUBMIT } from '../../../actions/member';
+import { SIGN_DETAIL, SIGN_SUBMIT } from '../../../actions/sign';
 
 const FormItem = Form.Item;
 
-@connect(({ member, loading }) => ({
-  member,
-  submitting: loading.effects['member/submit'],
+@connect(({ sign, loading }) => ({
+  sign,
+  submitting: loading.effects['sign/submit'],
 }))
 @Form.create()
-class MemberEdit extends PureComponent {
+class SignEdit extends PureComponent {
   componentWillMount() {
     const {
       dispatch,
@@ -20,7 +20,7 @@ class MemberEdit extends PureComponent {
         params: { id },
       },
     } = this.props;
-    dispatch(MEMBER_DETAIL(id));
+    dispatch(SIGN_DETAIL(id));
   }
 
   handleSubmit = e => {
@@ -39,7 +39,7 @@ class MemberEdit extends PureComponent {
           ...values,
         };
         console.log(params);
-        dispatch(MEMBER_SUBMIT(params));
+        dispatch(SIGN_SUBMIT(params));
       }
     });
   };
@@ -47,7 +47,7 @@ class MemberEdit extends PureComponent {
   render() {
     const {
       form: { getFieldDecorator },
-      member: { detail },
+      sign: { detail },
       submitting,
     } = this.props;
 
@@ -70,7 +70,7 @@ class MemberEdit extends PureComponent {
     );
 
     return (
-      <Panel title="修改" back="/haiyue/member" action={action}>
+      <Panel title="修改" back="/haiyue/sign" action={action}>
         <Form hideRequiredMark style={{ marginTop: 8 }}>
           <Card className={styles.card} bordered={false}>
             <FormItem {...formItemLayout} label="会员编号">
@@ -128,38 +128,16 @@ class MemberEdit extends PureComponent {
                 initialValue: detail.parentName,
               })(<Input placeholder="请输入家长姓名" />)}
             </FormItem>
-            <FormItem {...formItemLayout} label="宝宝小名">
-              {getFieldDecorator('nickname', {
+            <FormItem {...formItemLayout} label="签到时间">
+              {getFieldDecorator('signDate', {
                 rules: [
                   {
                     required: true,
-                    message: '请输入宝宝小名',
+                    message: '请输入签到时间',
                   },
                 ],
-                initialValue: detail.nickname,
-              })(<Input placeholder="请输入宝宝小名" />)}
-            </FormItem>
-            <FormItem {...formItemLayout} label="课程数">
-              {getFieldDecorator('classNum', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入课程数',
-                  },
-                ],
-                initialValue: detail.classNum,
-              })(<Input placeholder="请输入课程数" />)}
-            </FormItem>
-            <FormItem {...formItemLayout} label="赠课数">
-              {getFieldDecorator('giveNum', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入赠课数',
-                  },
-                ],
-                initialValue: detail.giveNum,
-              })(<Input placeholder="请输入赠课数" />)}
+                initialValue: detail.signDate,
+              })(<Input placeholder="请输入签到时间" />)}
             </FormItem>
           </Card>
         </Form>
@@ -168,4 +146,4 @@ class MemberEdit extends PureComponent {
   }
 }
 
-export default MemberEdit;
+export default SignEdit;
