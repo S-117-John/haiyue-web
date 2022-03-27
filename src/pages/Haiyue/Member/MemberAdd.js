@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Form, Input, Card, Button } from 'antd';
+import {Form, Input, Card, Button, DatePicker} from 'antd';
 import { connect } from 'dva';
 import Panel from '../../../components/Panel';
 import styles from '../../../layouts/Sword.less';
@@ -72,62 +72,62 @@ class MemberAdd extends PureComponent {
             </FormItem>
             <FormItem {...formItemLayout} label="会员电话">
               {getFieldDecorator('phone', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入会员电话',
-                  },
-                ],
+                // rules: [
+                //   {
+                //     required: true,
+                //     message: '请输入会员电话',
+                //   },
+                // ],
               })(<Input placeholder="请输入会员电话" />)}
             </FormItem>
             <FormItem {...formItemLayout} label="出生日期">
               {getFieldDecorator('birth', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入出生日期',
-                  },
-                ],
-              })(<Input placeholder="请输入出生日期" />)}
+                // rules: [
+                //   {
+                //     required: true,
+                //     message: '请输入出生日期',
+                //   },
+                // ],
+              })(<DatePicker />)}
             </FormItem>
             <FormItem {...formItemLayout} label="家长姓名">
               {getFieldDecorator('parentName', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入家长姓名',
-                  },
-                ],
+                // rules: [
+                //   {
+                //     required: true,
+                //     message: '请输入家长姓名',
+                //   },
+                // ],
               })(<Input placeholder="请输入家长姓名" />)}
             </FormItem>
             <FormItem {...formItemLayout} label="宝宝小名">
               {getFieldDecorator('nickname', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入宝宝小名',
-                  },
-                ],
+                // rules: [
+                //   {
+                //     required: true,
+                //     message: '请输入宝宝小名',
+                //   },
+                // ],
               })(<Input placeholder="请输入宝宝小名" />)}
             </FormItem>
             <FormItem {...formItemLayout} label="课程数">
               {getFieldDecorator('classNum', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入课程数',
-                  },
-                ],
+                // rules: [
+                //   {
+                //     required: true,
+                //     message: '请输入课程数',
+                //   },
+                // ],
               })(<Input placeholder="请输入课程数" />)}
             </FormItem>
             <FormItem {...formItemLayout} label="赠课数">
               {getFieldDecorator('giveNum', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入赠课数',
-                  },
-                ],
+                // rules: [
+                //   {
+                //     required: true,
+                //     message: '请输入赠课数',
+                //   },
+                // ],
               })(<Input placeholder="请输入赠课数" />)}
             </FormItem>
           </Card>
