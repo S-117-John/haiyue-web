@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
-import {Form, Input, Card, Button, DatePicker} from 'antd';
+import {Form, Input, Card, Button, DatePicker, Select} from 'antd';
 import { connect } from 'dva';
 import Panel from '../../../components/Panel';
 import styles from '../../../layouts/Sword.less';
 import { MEMBER_DETAIL, MEMBER_SUBMIT } from '../../../actions/member';
+import moment from "moment";
 
 const FormItem = Form.Item;
 
@@ -69,6 +70,8 @@ class MemberEdit extends PureComponent {
       </Button>
     );
 
+    const { Option } = Select;
+
     return (
       <Panel title="修改" back="/haiyue/member" action={action}>
         <Form hideRequiredMark style={{ marginTop: 8 }}>
@@ -82,7 +85,20 @@ class MemberEdit extends PureComponent {
                 //   },
                 // ],
                 initialValue: detail.code,
-              })(<Input placeholder="请输入会员编号" />)}
+              })(<Input placeholder="请输入会员编号" disabled="true" />)}
+            </FormItem>
+            <FormItem {...formItemLayout} label="会员班级">
+              {getFieldDecorator('clazz', {
+                initialValue: detail.clazz,
+              })(
+                <Select>
+                  <Option value="B1">B1</Option>
+                  <Option value="B2">B2</Option>
+                  <Option value="B3">B3</Option>
+                  <Option value="BM">BM</Option>
+                  <Option value="M">M</Option>
+                </Select>
+              )}
             </FormItem>
             <FormItem {...formItemLayout} label="会员姓名">
               {getFieldDecorator('name', {
@@ -114,7 +130,7 @@ class MemberEdit extends PureComponent {
                 //     message: '请输入出生日期',
                 //   },
                 // ],
-                initialValue: detail.birth,
+                initialValue: moment(detail.birth),
               })(<DatePicker />)}
             </FormItem>
             <FormItem {...formItemLayout} label="家长姓名">

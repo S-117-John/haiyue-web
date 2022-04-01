@@ -95,6 +95,10 @@ class Member extends PureComponent {
         dataIndex: 'code',
       },
       {
+        title: '会员班级',
+        dataIndex: 'clazz',
+      },
+      {
         title: '会员姓名',
         dataIndex: 'name',
       },

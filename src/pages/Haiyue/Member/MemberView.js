@@ -62,6 +62,9 @@ class MemberView extends PureComponent {
             <FormItem {...formItemLayout} label="会员编号">
               <span>{detail.code}</span>
             </FormItem>
+            <FormItem {...formItemLayout} label="会员班级">
+              <span>{detail.clazz}</span>
+            </FormItem>
             <FormItem {...formItemLayout} label="会员姓名">
               <span>{detail.name}</span>
             </FormItem>

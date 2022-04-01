@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import {Form, Input, Card, Button, DatePicker} from 'antd';
+import {Form, Input, Card, Button, DatePicker, Select} from 'antd';
 import { connect } from 'dva';
 import Panel from '../../../components/Panel';
 import styles from '../../../layouts/Sword.less';
@@ -46,19 +46,23 @@ class MemberAdd extends PureComponent {
       </Button>
     );
 
+    const { Option } = Select;
+
     return (
       <Panel title="新增" back="/haiyue/member" action={action}>
         <Form hideRequiredMark style={{ marginTop: 8 }}>
           <Card className={styles.card} bordered={false}>
-            <FormItem {...formItemLayout} label="会员编号">
-              {getFieldDecorator('code', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入会员编号',
-                  },
-                ],
-              })(<Input placeholder="请输入会员编号" />)}
+            <FormItem {...formItemLayout} label="会员班级">
+              {getFieldDecorator('clazz', {
+              })(
+                <Select>
+                  <Option value="B1">B1</Option>
+                  <Option value="B2">B2</Option>
+                  <Option value="B3">B3</Option>
+                  <Option value="BM">BM</Option>
+                  <Option value="M">M</Option>
+                </Select>
+              )}
             </FormItem>
             <FormItem {...formItemLayout} label="会员姓名">
               {getFieldDecorator('name', {
