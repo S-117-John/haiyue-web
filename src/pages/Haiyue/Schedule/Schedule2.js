@@ -54,6 +54,7 @@ class Schedule2 extends PureComponent {
 
   render() {
     const { isModalVisible } = this.state;
+    const { Option } = Select;
     return (
       <Panel>
         <Calendar
@@ -71,32 +72,53 @@ class Schedule2 extends PureComponent {
             autoComplete="off"
           >
             <Form.Item
+              label="时间段"
+              name="username"
+              rules={[{ required: true, message: 'Please input your username!' }]}
+            >
+              <Select>
+                <Option value="11:30-12:00">11:30-12:00</Option>
+                <Option value="11:30-12:10">11:30-12:10</Option>
+                <Option value="12:10-12:50">12:10-12:50</Option>
+                <Option value="12:10-13:00">12:10-13:00</Option>
+                <Option value="15:20-16:00">15:20-16:00</Option>
+                <Option value="15:30-16:00">15:30-16:00</Option>
+                <Option value="16:00-16:40">16:00-16:40</Option>
+                <Option value="16:00-16:50">16:00-16:50</Option>
+                <Option value="17:00-17:30">17:00-17:30</Option>
+                <Option value="17:00-17:40">17:00-17:40</Option>
+                <Option value="18:00-18:40">18:00-18:40</Option>
+                <Option value="18:00-18:50">18:00-18:50</Option>
+                <Option value="19:00-19:50">19:00-19:50</Option>
+              </Select>
+            </Form.Item>
+            <Form.Item
               label="班级"
               name="username"
               rules={[{ required: true, message: 'Please input your username!' }]}
             >
-              <Select placeholder="请选择班级">
-                <Select.Option key={1} value='Jaden'>
-                  Jaden
-                </Select.Option>
-                <Select.Option key={2} value='Hans'>
-                  Hans
-                </Select.Option>
-                <Select.Option key={3} value='Panda'>
-                  Panda
-                </Select.Option>
-                <Select.Option key={3} value='Eva'>
-                  Eva
-                </Select.Option>
-                <Select.Option key={3} value='Lily'>
-                  Lily
-                </Select.Option>
-                <Select.Option key={3} value='Jamie'>
-                  Jamie
-                </Select.Option>
-                <Select.Option key={3} value='Eilna'>
-                  Eilna
-                </Select.Option>
+              <Select>
+                <Option value="B">B</Option>
+                <Option value="B1">B1</Option>
+                <Option value="B2">B2</Option>
+                <Option value="B3">B3</Option>
+                <Option value="Bm">Bm</Option>
+                <Option value="M">M</Option>
+              </Select>
+            </Form.Item>
+            <Form.Item
+              label="教师"
+              name="username"
+              rules={[{ required: true, message: 'Please input your username!' }]}
+            >
+              <Select>
+                <Option value="Eilna">Eilna</Option>
+                <Option value="Eva">Eva</Option>
+                <Option value="Hans">Hans</Option>
+                <Option value="Jaden">Jaden</Option>
+                <Option value="Jamie">Jamie</Option>
+                <Option value="Lily">Lily</Option>
+                <Option value="Panda">Panda</Option>
               </Select>
             </Form.Item>
           </Form>

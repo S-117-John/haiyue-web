@@ -103,6 +103,10 @@ class Member extends PureComponent {
         dataIndex: 'name',
       },
       {
+        title: '宝宝小名',
+        dataIndex: 'nickname',
+      },
+      {
         title: '会员电话',
         dataIndex: 'phone',
       },
@@ -114,10 +118,7 @@ class Member extends PureComponent {
         title: '家长姓名',
         dataIndex: 'parentName',
       },
-      {
-        title: '宝宝小名',
-        dataIndex: 'nickname',
-      },
+
       {
         title: '课程数',
         dataIndex: 'classNum',

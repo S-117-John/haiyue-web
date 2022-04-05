@@ -68,87 +68,51 @@ class ScheduleEdit extends PureComponent {
         提交
       </Button>
     );
-
+    const { TextArea } = Input;
     return (
       <Panel title="修改" back="/haiyue/schedule" action={action}>
         <Form hideRequiredMark style={{ marginTop: 8 }}>
           <Card className={styles.card} bordered={false}>
             <FormItem {...formItemLayout} label="星期一">
               {getFieldDecorator('monday', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入星期一',
-                  },
-                ],
                 initialValue: detail.monday,
-              })(<Input placeholder="请输入星期一" />)}
+              })(<TextArea />)}
             </FormItem>
             <FormItem {...formItemLayout} label="星期二">
               {getFieldDecorator('tuesday', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入星期二',
-                  },
-                ],
+
                 initialValue: detail.tuesday,
-              })(<Input placeholder="请输入星期二" />)}
+              })(<TextArea />)}
             </FormItem>
             <FormItem {...formItemLayout} label="星期三">
               {getFieldDecorator('wednesday', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入星期三',
-                  },
-                ],
+
                 initialValue: detail.wednesday,
-              })(<Input placeholder="请输入星期三" />)}
+              })(<TextArea />)}
             </FormItem>
             <FormItem {...formItemLayout} label="星期四">
               {getFieldDecorator('thursday', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入星期四',
-                  },
-                ],
+
                 initialValue: detail.thursday,
-              })(<Input placeholder="请输入星期四" />)}
+              })(<TextArea />)}
             </FormItem>
             <FormItem {...formItemLayout} label="星期五">
               {getFieldDecorator('friday', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入星期五',
-                  },
-                ],
+
                 initialValue: detail.friday,
-              })(<Input placeholder="请输入星期五" />)}
+              })(<TextArea />)}
             </FormItem>
             <FormItem {...formItemLayout} label="星期六">
               {getFieldDecorator('saturday', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入星期六',
-                  },
-                ],
+
                 initialValue: detail.saturday,
-              })(<Input placeholder="请输入星期六" />)}
+              })(<TextArea />)}
             </FormItem>
             <FormItem {...formItemLayout} label="星期天">
               {getFieldDecorator('sunday', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入星期天',
-                  },
-                ],
+
                 initialValue: detail.sunday,
-              })(<Input placeholder="请输入星期天" />)}
+              })(<TextArea />)}
             </FormItem>
           </Card>
         </Form>

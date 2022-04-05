@@ -56,6 +56,10 @@ class Schedule extends PureComponent {
 
     const columns = [
       {
+        title: '时段',
+        dataIndex: 'timePeriod',
+      },
+      {
         title: '星期一',
         dataIndex: 'monday',
       },
