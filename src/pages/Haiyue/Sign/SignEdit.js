@@ -45,6 +45,9 @@ class SignEdit extends PureComponent {
   };
 
   render() {
+
+    const { TextArea } = Input;
+
     const {
       form: { getFieldDecorator },
       sign: { detail },
@@ -73,71 +76,41 @@ class SignEdit extends PureComponent {
       <Panel title="修改" back="/haiyue/sign" action={action}>
         <Form hideRequiredMark style={{ marginTop: 8 }}>
           <Card className={styles.card} bordered={false}>
-            <FormItem {...formItemLayout} label="会员编号">
-              {getFieldDecorator('code', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入会员编号',
-                  },
-                ],
-                initialValue: detail.code,
-              })(<Input placeholder="请输入会员编号" />)}
-            </FormItem>
             <FormItem {...formItemLayout} label="会员姓名">
               {getFieldDecorator('name', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入会员姓名',
-                  },
-                ],
+
                 initialValue: detail.name,
-              })(<Input placeholder="请输入会员姓名" />)}
+              })(<Input placeholder="请输入会员姓名" disabled />)}
             </FormItem>
             <FormItem {...formItemLayout} label="会员电话">
               {getFieldDecorator('phone', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入会员电话',
-                  },
-                ],
+
                 initialValue: detail.phone,
-              })(<Input placeholder="请输入会员电话" />)}
+              })(<Input placeholder="请输入会员电话" disabled />)}
             </FormItem>
             <FormItem {...formItemLayout} label="出生日期">
               {getFieldDecorator('birth', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入出生日期',
-                  },
-                ],
+
                 initialValue: detail.birth,
-              })(<Input placeholder="请输入出生日期" />)}
+              })(<Input placeholder="请输入出生日期" disabled />)}
             </FormItem>
             <FormItem {...formItemLayout} label="家长姓名">
               {getFieldDecorator('parentName', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入家长姓名',
-                  },
-                ],
+
                 initialValue: detail.parentName,
-              })(<Input placeholder="请输入家长姓名" />)}
+              })(<Input placeholder="请输入家长姓名" disabled />)}
             </FormItem>
-            <FormItem {...formItemLayout} label="签到时间">
-              {getFieldDecorator('signDate', {
+
+            <FormItem {...formItemLayout} label="评价">
+              {getFieldDecorator('evaluation', {
                 rules: [
                   {
                     required: true,
-                    message: '请输入签到时间',
+                    message: '评价',
                   },
                 ],
-                initialValue: detail.signDate,
-              })(<Input placeholder="请输入签到时间" />)}
+                initialValue: detail.evaluation,
+              })(<TextArea rows={4} />)}
             </FormItem>
           </Card>
         </Form>

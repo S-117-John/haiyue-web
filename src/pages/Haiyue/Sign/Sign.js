@@ -1,9 +1,10 @@
-import React, { PureComponent } from 'react';
+import React, {Fragment, PureComponent} from 'react';
 import { connect } from 'dva';
-import { Button, Col, Form, Input, Row } from 'antd';
+import {Button, Col, Divider, Form, Input, Row} from 'antd';
 import Panel from '../../../components/Panel';
 import { SIGN_LIST } from '../../../actions/sign';
 import Grid from '../../../components/Sword/Grid';
+import router from "umi/router";
 
 const FormItem = Form.Item;
 
@@ -43,6 +44,24 @@ class Sign extends PureComponent {
         </Col>
       </Row>
     );
+  };
+
+  renderActionButton = (keys, rows) => (
+    <Fragment>
+      <Divider type="vertical" />
+      <a
+        title="课后评价"
+        onClick={() => {
+          this.handleClick(rows[0].id);
+        }}
+      >
+        课后评价
+      </a>
+    </Fragment>
+  );
+
+  handleClick = parentId => {
+    router.push(`/haiyue/sign/edit/${parentId}`);
   };
 
   render() {
@@ -88,6 +107,7 @@ class Sign extends PureComponent {
           form={form}
           onSearch={this.handleSearch}
           renderSearchForm={this.renderSearchForm}
+          renderActionButton={this.renderActionButton}
           loading={loading}
           data={data}
           columns={columns}
