@@ -23,7 +23,7 @@ export default [
       // dashboard
       {
         path: '/',
-        redirect: '/dashboard/workplace',
+        redirect: '/dashboard/analysis',
       },
       {
         path: '/result',
@@ -164,6 +164,17 @@ export default [
               { path: '/haiyue/sign/add', component: './Haiyue/Sign/SignAdd' },
               { path: '/haiyue/sign/edit/:id', component: './Haiyue/Sign/SignEdit' },
               { path: '/haiyue/sign/view/:id', component: './Haiyue/Sign/SignView' },
+            ],
+          },
+          {
+            path: '/haiyue/comments',
+            routes: [
+              { path: '/haiyue/comments', redirect: '/haiyue/comments/list' },
+              { path: '/haiyue/comments/list', component: './Haiyue/Comments/Comments' },
+              { path: '/haiyue/comments/add', component: './Haiyue/Comments/CommentsAdd' },
+              { path: '/haiyue/comments/edit/:id', component: './Haiyue/Comments/CommentsEdit' },
+              { path: '/haiyue/comments/view/:id', component: './Haiyue/Comments/CommentsView' },
+              { path: '/haiyue/comments/sub/:id', component: './Haiyue/Comments/CommentSub' },
             ],
           },
         ]

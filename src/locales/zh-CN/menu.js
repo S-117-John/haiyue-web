@@ -84,5 +84,6 @@ export default {
   'menu.desk.member': '会员管理',
   'menu.desk.clazz': '班级管理',
   'menu.desk.schedule': '课程表',
-  'menu.desk.sign': '会员签到记录'
+  'menu.desk.sign': '会员签到记录',
+  'menu.desk.comments': '会员评价'
 };

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Form, Input, Card, Button } from 'antd';
+import {Form, Input, Card, Button, Comment, List} from 'antd';
 import { connect } from 'dva';
 import Panel from '../../../components/Panel';
 import styles from '../../../layouts/Sword.less';
@@ -22,6 +22,7 @@ class SignEdit extends PureComponent {
     } = this.props;
     dispatch(SIGN_DETAIL(id));
   }
+
 
   handleSubmit = e => {
     e.preventDefault();
